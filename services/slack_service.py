@@ -1,16 +1,14 @@
-
 import structlog
 
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
-from config.app_config import app_config
 
 LOG = structlog.get_logger()
 
 
 class SlackService:
-    def __init__(self):
-        self.slack_client = WebClient(token=app_config.SLACK_BOT_TOKEN)
+    def __init__(self, bot_token: str):
+        self.slack_client = WebClient(token=bot_token)
 
     def send_message(self, channel: str, text: str, thread_ts: str = None):
         try:

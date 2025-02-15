@@ -5,3 +5,5 @@ pydantic==2.10.6
 pydantic-settings==2.7.1
 structlog==25.1.0
 langchain==0.3.18
+gunicorn==23.0.0
+langchain-google-genai==2.0.9
