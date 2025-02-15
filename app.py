@@ -4,6 +4,7 @@ import structlog
 from flask import Flask, request, jsonify
 from services.slack_service import SlackService
 from utils.llm_utils import LLMUtils
+from config.app_config import app_config
 
 LOG = structlog.get_logger()
 
@@ -56,4 +57,4 @@ def slack_events():
 
 
 if __name__ == "__main__":
-    app.run(port=3000, debug=True)
+    app.run(port=app_config.PORT, debug=app_config.DEBUG_MODE)
